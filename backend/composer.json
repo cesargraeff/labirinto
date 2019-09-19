@@ -1,0 +1,12 @@
+{
+    "name": "cagraeff/labirinto",
+    "description": "Implementação do algoritmo genético",
+    "type": "project",
+    "authors": [
+        {
+            "name": "César Augusto Graeff",
+            "email": "cesaraugustogff@gmail.com"
+        }
+    ],
+    "require": {}
+}

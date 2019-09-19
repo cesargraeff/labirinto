@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Labirinto</title>
+
+    <link rel="stylesheet" href="node_modules/material-icons-font/material-icons-font.css" />
+    <link rel="stylesheet" href="node_modules/bootswatch/dist/materia/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="row">
+            <div class="col">
+                <h1 class="text-white">Labirinto</h1>
+            </div>
+            <div class="col text-right">
+                <p class="m-0 small text-white">UNIVERSIDADE DE CAXIAS DO SUL</p>
+                <p class="m-0 small text-white">INTELIGÊNCIA ARTIFICIAL II</p>
+                <p class="m-0 small text-white">CÉSAR A. GRAEFF E MATHEUS F. F. GUIMARÃES</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="parametros">
+
+        <div class="container mt-4">
+            <form id="form">
+                <div class="row mb-2">
+                    <div class="col">
+                        <i class="material-icons">settings</i>
+                        <h3>Parâmetros</h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="populacao">População</label>
+                            <input type="number" class="form-control text-center" name="populacao" id="populacao" value="1000" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="geracoes">Max. Gerações</label>
+                            <input type="number" class="form-control text-center" name="geracoes" id="geracoes" value="100" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="mutacao">Mutação</label>
+                            <input type="number" class="form-control text-center" name="mutacao" id="mutacao" value="5" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="crossover">Crossover</label>
+                            <input type="number" class="form-control text-center" name="crossover" id="crossover" value="70" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="individuos">Indivíduos por Torneio</label>
+                            <input type="number" class="form-control text-center" name="individuos" id="individuos" value="5" />
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="elitismo" name="elitismo" checked>
+                            <label class="form-check-label" for="elitismo">Elitismo</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-2 mt-5">
+                    <div class="col">
+                        <i class="material-icons">settings</i>
+                        <h3>Penalidades</h3>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="parede">Parede</label>
+                            <input type="number" class="form-control text-center" name="parede" id="parede" value="50" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="fora">Fora do Tabuleiro</label>
+                            <input type="number" class="form-control text-center" name="fora" id="fora" value="50" />
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="form-group">
+                            <label for="repeticao">Repetição</label>
+                            <input type="number" class="form-control text-center" name="repeticao" id="repeticao" value="50" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-2 mt-5">
+                    <div class="col">
+                        <i class="material-icons">settings</i>
+                        <h3>Recompensas</h3>
+                    </div>
+                </div>
+
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="cima">Cima</label>
+                            <input type="number" step="0.1" class="form-control text-center" name="cima" id="cima" value="1" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="baixo">Baixo</label>
+                            <input type="number" step="0.1" class="form-control text-center" name="baixo" id="baixo" value="1" />
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="form-group">
+                            <label for="direita">Direita</label>
+                            <input type="number" step="0.1" class="form-control text-center" name="direita" id="direita" value="1" />
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="form-group">
+                            <label for="esquerda">Esquerda</label>
+                            <input type="number" step="0.1" class="form-control text-center" name="esquerda" id="esquerda" value="1" />
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                        <div class="form-group">
+                            <label for="final">Final</label>
+                            <input type="number" step="0.1" class="form-control text-center" name="final" id="final" value="1" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-right">
+                        <button class="btn btn-success" type="submit">
+                            <i class="material-icons">play_arrow</i>
+                            EXECUTAR
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+
+    <section id="labirinto">
+
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col">
+                    <table></table>
+                </div>
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <section id="loading">
+        <div class="container text-center mb-4">
+            <h3><b>Processando ...</b> Aguarde</h3>
+        </div>
+    </section>
+
+    <section id="historico">
+        <div class="container">
+            <div class="row mb-2">
+                <div class="col">
+                    <i class="material-icons">list</i>
+                    <h3>Histórico</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Geração</th>
+                                <th>Aptidão</th>
+                                <th>Genes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
